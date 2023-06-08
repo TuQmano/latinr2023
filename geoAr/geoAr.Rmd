@@ -31,13 +31,11 @@ library(tidyverse)
 library(geoAr)
 ```
 
-## Sobre `{geoAr}`
+# Sobre `{geoAr}`
 
 Colección de herramientas que facilita el acceso a datos y el flujo de trabajo para el análisis espacial de Argentina. La versión `0.1.4.2`, disponible en [CRAN](https://cran.r-project.org/web/packages/geoAr/index.html), incluye información histórica de censos, límites administrativos en diferentes niveles de agregación, ubicación de asentamientos humanos, entre otros. La versión en desarrollo, accesible desde [r-universe](https://politicaargentina.r-universe.dev/geoAr) agrega funciones para interactuar con la API del Servicio de Normalización de Datos Geográficos de la Argentina ([georef-ar](https://georef-ar-api.readthedocs.io/es/latest/)).
 
-
 El punto de partida del paquete fue facilitar el acceso a geometrías (y metadatos asociadas, como codificaciones que las identifican) de uso frecuente. La fuente de datos elegida para ello fue la cartografía elaborada por el Instituto Nacional de Estadística y Censos (INDEC) de Argentina para el operativo censal de Hogares y Población del año 2010. Partiendo de los archivos detallados compartidos en el [portal de geoestadística](https://www.indec.gob.ar/indec/web/Institucional-Indec-Codgeo) del instituto se generó el código para (a) habilitar una versión simplificada - con menor detalle y por ende menos precisa pero más liviana- y (b) facilitar su acceso a partir de parámetros (seleccionar distritos o niveles de agregación particular)
-
 
 ```{r , eval = FALSE}
 
@@ -45,7 +43,6 @@ geoAr::get_geo(geo = "TUCUMAN", level = "departamento", simplified = TRUE)
 
 
 ```
-
 
 ```{r , echo = FALSE}
 
@@ -56,6 +53,10 @@ geoAr::get_geo(geo = "TUCUMAN", level = "departamento", simplified = TRUE) %>% h
 
 ## Fuentes de datos
 
-A la fuente de datos primera se empezaron a sumar nuevos recursos. Así, por ejemplo, con `geoAr::get_censo()` se puede acceder a versiones de los censos históricos (yyyy - yyyy), con `geoAr::get_eph()` se puede descargar poligonos de los _Aglomerados Urbanos_ correspondientes a la _Encuesta Permanente de Hogares (INDEC)_ y con `geoAr::get_bahra()` se puede descargar la _base total_ de Asentamientos Humanos de la Argentina (BAHRA). 
+A la fuente de datos primera se empezaron a sumar nuevos recursos. Así, por ejemplo, con `geoAr::get_censo()` se puede acceder a versiones de los censos históricos (1869 a 2010)[^1]; con `geoAr::get_eph()` se puede descargar polígonos de los [*Aglomerados Urbanos* correspondientes a la *Encuesta Permanente de Hogares (INDEC)*](https://www.indec.gob.ar/indec/web/Nivel4-Tema-1-39-120) [^2] y con `geoAr::get_bahra()` se puede descargar la *base total* de Asentamientos Humanos de la Argentina ([BAHRA](http://www.bahra.gob.ar/)).
+
+[^1]: Los datos fueron obtenidos del proyecto '*Base cartográfica de departamentos para los censos nacionales de la República Argentina desde 1869 a 2010*' de Gonzalo Rodriguez y Pablo De Grande el 15 marzo de 2023. La documentación se encuentra disponible en <https://ri.conicet.gov.ar/handle/11336/149867>
+
+[^2]: El parámetro `level` permite seleccionar la descarga de diferentes capas posibles: radios censales, entidades o envolventes urbanos. Por otro lado, el parámetro booleano `centroid` define si se descargar un polígono (por defecto) o el centroide correspondiente al `level` seleccionado.
 
 ## Otras herramientas
