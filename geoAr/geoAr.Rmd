@@ -1,7 +1,7 @@
 ---
 type: oral
 language: spanish
-title: '{geoAr}: datos y herramientas _geo_ de Argentina'
+title: '{_geoAr_}: datos y herramientas _geo_ de Argentina'
 topics: 3
 authors:
 - first_name: Juan Pablo
@@ -74,10 +74,10 @@ geoAr::get_eph(geo = "TUCUMAN", simplified = TRUE, level = "radios", centroid = 
 
 ## Otras herramientas
 
-Además de la descarga de información desde múltiples fuentes, @geoAr provee verbos para facilitar una variedad de tareas relacionadas con la información geográfica:
+Además de la descarga de información desde múltiples fuentes, \CRANpkg{geoAr} provee verbos para facilitar una variedad de tareas relacionadas con la información geográfica:
 
--   [**`leaflet`**](https://rstudio.github.io/leaflet/) permite con una simple linea agregarle una capa base de una variedad de proveedores distintos que permiten mayor contexto geográfico a la capa que se está representando. Por ejemplo, para *Open Street Map* se puede ejecutar el siguiente código: **`addProviderTiles(provider = providers$OpenStreetMap)`**. \CRANpkg{geoAr} permite utilizar una capa base desarrollada por el Instituto Geográfico Nacional (IGN) sustituyendo esa sentencia por este comando: **`geoAr::addArgTiles()`**
+-   [**`leaflet`**](https://rstudio.github.io/leaflet/) permite con una simple linea agregarle una capa base de una variedad de proveedores distintos que permiten mayor contexto geográfico a la capa que se está representando. Por ejemplo, para *Open Street Map* se puede ejecutar el siguiente código: **`addProviderTiles(provider = providers$OpenStreetMap)`**. \CRANpkg{geoAr} permite utilizar una [capa base desarrollada por el Instituto Geográfico Nacional (IGN)](https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/ServiciosOGC/Leaflet) sustituyendo esa sentencia por este comando: **`geoAr::addArgTiles()`**
 
--   [**`{geofacet}`**](https://hafen.github.io/geofacet/): es un paquete que busca sacar provecho de la potencia de \CRANpkg{ggplot2} (@ggplot) y utilizar el *facetado* de un modo que cada caja de una grilla represente una entidad y que la suma de estas guarden relación con su distribución espacial. \CRANpkg{geoAr} permite descargar y trabajar con [grillas para las provincias de Argentina](https://politicaargentina.github.io/geoAr/articles/geoAr_geofacet.html).
+-   [**`{geofacet}`**](https://hafen.github.io/geofacet/): es un paquete que busca sacar provecho de la potencia de \CRANpkg{ggplot2} y utilizar el *facetado* de un modo que cada caja de una grilla represente una entidad y que la suma de estas guarden relación con su distribución espacial. \CRANpkg{geoAr} permite descargar y trabajar con [grillas para las provincias de Argentina](https://politicaargentina.github.io/geoAr/articles/geoAr_geofacet.html).
 
--   **`georef-ar`([API](https://georef-ar-api.readthedocs.io/es/latest/))** *permite normalizar y codificar los nombres de unidades territoriales de la Argentina (provincias, departamentos, municipios y localidades) y de sus calles, así como ubicar coordenadas dentro de ellas*. `{geoAr}`(**`@geoAr`** ) presenta verbos para obtener datos de Provincia, Calles, Departamentos, Localidades, Municipios, Ubicaciones y la normalización de direcciones.
+-   **`georef-ar` ([API](https://georef-ar-api.readthedocs.io/es/latest/))** *permite normalizar y codificar los nombres de unidades territoriales de la Argentina (provincias, departamentos, municipios y localidades) y de sus calles, así como ubicar coordenadas dentro de ellas*. \CRANpkg{geoAr} presenta verbos para obtener datos de Provincia, Calles, Departamentos, Localidades, Municipios, Ubicaciones y la normalización de direcciones.
